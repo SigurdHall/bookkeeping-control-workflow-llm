@@ -1,0 +1,25 @@
+[project]
+name = "bookkeeping-control-workflow-llm"
+version = "0.1.0"
+description = "A controllable bookkeeping workflow using rules, historical similarity, and LLM-assisted posting suggestions."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Sigurd Hall" }
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
