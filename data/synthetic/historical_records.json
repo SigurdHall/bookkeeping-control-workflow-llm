@@ -1,0 +1,29 @@
+[
+  {
+    "historical_id": "H001",
+    "supplier_name": "Nordic Software AS",
+    "description": "Annual software subscription for reporting",
+    "amount": 7900.0,
+    "account_code": "6790",
+    "cost_center": "41010",
+    "project_code": null
+  },
+  {
+    "historical_id": "H002",
+    "supplier_name": "Cloud Reports AB",
+    "description": "Subscription for analytics and dashboards",
+    "amount": 9200.0,
+    "account_code": "6790",
+    "cost_center": "41010",
+    "project_code": null
+  },
+  {
+    "historical_id": "H003",
+    "supplier_name": "Office Supplies Norge",
+    "description": "Office materials and consumables",
+    "amount": 2100.0,
+    "account_code": "6800",
+    "cost_center": "42020",
+    "project_code": null
+  }
+]
