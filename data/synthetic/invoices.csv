@@ -1,0 +1,4 @@
+invoice_id,supplier_id,supplier_name,description,amount,currency,cost_center,project_code,vat_code
+INV-001,SUP-100,Nordic Software AS,Annual software subscription for finance reporting,8500,NOK,41010,,25
+INV-002,SUP-200,Office Supplies Norge,Office materials and consumables,2100,NOK,42020,,25
+INV-003,SUP-300,Implementation Partner AS,Project rollout support,15000,NOK,,,25

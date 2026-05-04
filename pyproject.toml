@@ -3,7 +3,7 @@ name = "bookkeeping-control-workflow-llm"
 version = "0.1.0"
 description = "A controllable bookkeeping workflow using rules, historical similarity, and LLM-assisted posting suggestions."
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.11,<3.13"
 authors = [
   { name = "Sigurd Hall" }
 ]

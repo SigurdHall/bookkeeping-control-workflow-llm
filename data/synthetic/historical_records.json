@@ -6,7 +6,8 @@
     "amount": 7900.0,
     "account_code": "6790",
     "cost_center": "41010",
-    "project_code": null
+    "project_code": null,
+    "vat_code": "25"
   },
   {
     "historical_id": "H002",
@@ -15,7 +16,8 @@
     "amount": 9200.0,
     "account_code": "6790",
     "cost_center": "41010",
-    "project_code": null
+    "project_code": null,
+    "vat_code": "25"
   },
   {
     "historical_id": "H003",
@@ -24,6 +26,7 @@
     "amount": 2100.0,
     "account_code": "6800",
     "cost_center": "42020",
-    "project_code": null
+    "project_code": null,
+    "vat_code": "25"
   }
 ]

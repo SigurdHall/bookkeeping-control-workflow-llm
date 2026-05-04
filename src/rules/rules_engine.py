@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from src.utils.schemas import InvoiceRecord, RuleViolation
+from src.utils.schemas import InvoiceRecord, LLMSuggestion, RuleViolation
 
 
 def evaluate_rules(invoice: InvoiceRecord) -> list[RuleViolation]:
@@ -48,3 +48,40 @@ def evaluate_rules(invoice: InvoiceRecord) -> list[RuleViolation]:
 
 def has_blocking_violations(violations: list[RuleViolation]) -> bool:
     return any(v.severity == "blocking" for v in violations)
+
+
+def evaluate_suggestion_rules(
+    invoice: InvoiceRecord,
+    suggestion: LLMSuggestion,
+) -> list[RuleViolation]:
+    """Validate the LLM suggestion after it has been generated."""
+    violations = evaluate_rules(invoice)
+
+    if not suggestion.suggested_account:
+        violations.append(
+            RuleViolation(
+                rule_id="S001",
+                message="LLM suggestion must include an account before posting can be suggested.",
+                severity="blocking",
+            )
+        )
+
+    if suggestion.confidence < 0.35:
+        violations.append(
+            RuleViolation(
+                rule_id="S002",
+                message="LLM confidence is too low for direct suggestion.",
+                severity="warning",
+            )
+        )
+
+    if invoice.vat_code and suggestion.suggested_vat_code != invoice.vat_code:
+        violations.append(
+            RuleViolation(
+                rule_id="S003",
+                message="Suggested VAT code differs from the invoice VAT code.",
+                severity="warning",
+            )
+        )
+
+    return violations

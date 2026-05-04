@@ -1,0 +1,25 @@
+paths:
+  input_path: data/synthetic/invoices.csv
+  historical_path: data/synthetic/historical_records.json
+  output_dir: data/output
+  review_dir: data/review
+  review_input_path: data/review/review_decisions.csv
+  evaluation_output_dir: data/output
+retrieval:
+  top_k: 3
+  method: tfidf
+llm:
+  provider: mock
+  model_name: mock-llm
+  prompt_version: rag-posting-v1
+  azure_endpoint_env: AZURE_OPENAI_ENDPOINT
+  azure_api_key_env: AZURE_OPENAI_API_KEY
+  azure_api_version_env: AZURE_OPENAI_API_VERSION
+  azure_deployment_env: AZURE_OPENAI_CHAT_DEPLOYMENT
+thresholds:
+  suggest_min_confidence: 0.75
+  review_min_confidence: 0.35
+  warning_confidence_penalty: 0.15
+outputs:
+  write_csv: true
+  write_parquet: true
